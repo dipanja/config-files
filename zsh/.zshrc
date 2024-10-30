@@ -120,6 +120,7 @@ if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
   export EDITOR='nvim'
+  export VISUAL='nvim'
 fi
 
 # Compilation flags
@@ -160,6 +161,7 @@ alias dl="yt-dlp"
 
 
 
+# [ -f ~/.config/dotfiles/fzf/fzf_rc.zsh ] && source ~/.config/dotfiles/fzf/fzf_rc.zsh
 
 
 
@@ -170,8 +172,8 @@ alias cd="z"
 
 set -o vi
 
-export EDITOR='nvim'
-export VISUAL='nvim'
+# export EDITOR='nvim'
+# export VISUAL='nvim'
 
 # own functions 
 mkcd () {
