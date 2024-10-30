@@ -16,4 +16,7 @@ Prefix + n = "go to next window"
 Prefix + $ = "rename tmux session"
 Prefix + d = "detach current session"
 ta = "attach to last session"
+pkill -f tmux = "kills all sessions"
+Prefix C-s = "save the current session"
+Prefix C-r = "restore the saved session"
 ```
