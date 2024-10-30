@@ -158,6 +158,7 @@ alias da="conda deactivate"
 alias lg="lazygit"
 alias dl="yt-dlp"
 # tmux
+alias tk="pkill -f tmux"
 
 
 
