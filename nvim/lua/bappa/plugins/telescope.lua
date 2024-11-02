@@ -99,5 +99,6 @@ return {
 			{ desc = "Find open files in buffer" }
 		)
 		keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find Telescope help" })
+		keymap.set("n", "<leader>fs", builtin.lsp_document_symbols, { desc = "lsp document symbols" })
 	end,
 }
