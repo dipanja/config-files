@@ -158,7 +158,9 @@ alias da="conda deactivate"
 alias lg="lazygit"
 alias dl="yt-dlp"
 # tmux
-alias tk="pkill -f tmux"
+alias t="tmux new -s home -c ~"
+alias tk="tmux kill-server"
+alias tl="tmux ls"  # list tmux sessions
 
 
 
