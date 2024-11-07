@@ -67,7 +67,7 @@ alias open='xdg-open'
 # alias vi='nvim'
 alias v='nvim .'
 alias vim='nvim'
-# alias cl='clear'
+alias cl='clear'
 alias hg='history | grep'
 alias af="alias-finder -l"
 alias p="cd /media/bappa/DATA/projects"
@@ -82,8 +82,9 @@ alias fd="fdfind"
 alias da="conda deactivate"
 alias lg="lazygit"
 alias dl="yt-dlp"
+
 # tmux
-alias t="tmux new -s home -c ~"
+alias t="tmux new -s HOME -c ~"
 alias tk="tmux kill-server"
 alias tl="tmux ls"  # list tmux sessions
 
