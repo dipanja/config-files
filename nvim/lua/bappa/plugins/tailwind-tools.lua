@@ -1,8 +1,10 @@
 -- tailwind-tools.lua
 return {
 	"luckasRanarison/tailwind-tools.nvim",
-	name = "tailwind-tools",
-	build = ":UpdateRemotePlugins",
+	-- name = "tailwind-tools",
+	-- build = ":UpdateRemotePlugins",
+  event = "VeryLazy",
+
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter",
 		-- "nvim-telescope/telescope.nvim", -- optional
@@ -16,4 +18,4 @@ return {
 			debounce = 100, -- in milliseconds, only applied in insert mode
 		},
 	}, -- your configuration
-}
+} 
