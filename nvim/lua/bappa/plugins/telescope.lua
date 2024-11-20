@@ -106,7 +106,6 @@ return {
 		keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Fuzzy find files in cwd" })
 		keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Fuzzy find recent files" })
 		keymap.set("n", "<leader>fw", builtin.grep_string, { desc = "Find string in cwd" })
-		-- keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find in buffer" })
 		keymap.set(
 			"n",
 			"<leader>fb",
@@ -115,5 +114,6 @@ return {
 		)
 		keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find Telescope help" })
 		keymap.set("n", "<leader>fs", builtin.lsp_document_symbols, { desc = "lsp document symbols" })
+		keymap.set("n", "<leader>fm", builtin.marks, { desc = "Find marks in all buffers" })
 	end,
 }
