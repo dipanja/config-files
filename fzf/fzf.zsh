@@ -1,7 +1,7 @@
 # Alias for easy usage
 alias fcd="fzf_cd"
 
-
+# find folders and create tmux sessions
 fzf_cd() {
     local dir
     
