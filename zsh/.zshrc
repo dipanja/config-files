@@ -87,6 +87,7 @@ alias dl="yt-dlp"
 alias t="tmux new -s HOME -c ~"
 alias tk="tmux kill-server"
 alias tl="tmux ls"  # list tmux sessions
+alias tt="tmuxhere"
 
 # alias for eza and zoxide
 alias ls='eza --icons=always'
@@ -100,6 +101,25 @@ mkcd () {
   mkdir -p "$1" && cd "$1"
 }
 
+# Function to create or attach to tmux session named after current directory
+tmuxhere() {
+    # Get the current directory name, strip any leading path
+    local SESSION_NAME=$(basename "$PWD" | tr . _)
+    
+    # Check if tmux is already running
+    if [[ -z "$TMUX" ]]; then
+        # Check if a session with this name exists
+        if tmux has-session -t "$SESSION_NAME" 2>/dev/null; then
+            # If exists, attach to it
+            tmux attach-session -t "$SESSION_NAME"
+        else
+            # If doesn't exist, create new session and attach
+            tmux new-session -s "$SESSION_NAME"
+        fi
+    else
+        echo "Already inside a tmux session"
+    fi
+}
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/bappa/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
