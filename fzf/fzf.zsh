@@ -6,11 +6,14 @@ fzf_cd() {
     local dir
     
     # Combine both directories for search, but show relative paths
-    dir=$(find "$HOME" "/media/bappa/DATA/projects" \
+    dir=$(find "$HOME/.config/dotfiles" "/media/bappa/DATA/projects" \
         -type d \( \
             -name ".git" -o \
-            -name "node_modules" \
-            -name "venv" \
+            -name ".node" -o \
+            -name ".next" -o \
+            -name "node_modules" -o \
+            -name "venv" -o \
+            -name "snap" -o \
             -name "env" \
         \) -prune -o \
         -type d -print | \
