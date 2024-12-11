@@ -95,6 +95,7 @@ return {
 					},
 				},
 			},
+			extensions = {},
 		})
 
 		telescope.load_extension("fzf")
