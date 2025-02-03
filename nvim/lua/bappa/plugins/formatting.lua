@@ -6,18 +6,18 @@ return {
 
 		conform.setup({
 			formatters_by_ft = {
-				javascript = { { "prettier", "prettierd" } },
-				typescript = { { "prettier", "prettierd" } },
-				javascriptreact = { { "prettier", "prettierd" } },
-				typescriptreact = { { "prettier", "prettierd" } },
-				svelte = { { "prettier", "prettierd" } },
-				css = { { "prettier", "prettierd" } },
-				html = { { "prettier", "prettierd" } },
-				json = { { "prettier", "prettierd" } },
-				yaml = { { "prettier", "prettierd" } },
-				markdown = { { "prettier", "prettierd" } },
-				graphql = { { "prettier", "prettierd" } },
-				liquid = { { "prettier", "prettierd" } },
+				javascript = { "prettier", "prettierd" },
+				typescript = { "prettier", "prettierd" },
+				javascriptreact = { "prettier", "prettierd" },
+				typescriptreact = { "prettier", "prettierd" },
+				svelte = { "prettier", "prettierd" },
+				css = { "prettier", "prettierd" },
+				html = { "prettier", "prettierd" },
+				json = { "prettier", "prettierd" },
+				yaml = { "prettier", "prettierd" },
+				markdown = { "prettier", "prettierd" },
+				graphql = { "prettier", "prettierd" },
+				liquid = { "prettier", "prettierd" },
 				lua = { "stylua" },
 				python = { "isort", "black" },
 			},
@@ -26,6 +26,7 @@ return {
 				async = false,
 				timeout_ms = 1000,
 			},
+			stop_after_first = true,
 		})
 
 		vim.keymap.set({ "n", "v" }, "<leader>mp", function()
