@@ -82,7 +82,9 @@ alias fd="fdfind"
 alias da="conda deactivate"
 alias lg="lazygit"
 alias dl="yt-dlp"
+# Obsidian
 alias oo="cd /media/bappa/DATA/obsidian"
+alias ob="~/applications/Obsidian-1.8.4.AppImage --no-sandbox"
 
 # tmux
 alias t="tmux new -s HOME -c ~"
