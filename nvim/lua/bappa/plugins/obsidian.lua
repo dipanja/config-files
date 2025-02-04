@@ -3,36 +3,40 @@ return {
 	version = "*", -- recommended, use latest release instead of latest commit
 	lazy = true,
 	ft = "markdown",
-	-- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
-	-- event = {
-	--   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
-	--   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/*.md"
-	--   -- refer to `:h file-pattern` for more examples
-	--   "BufReadPre path/to/my-vault/*.md",
-	--   "BufNewFile path/to/my-vault/*.md",
-	-- },
 	dependencies = {
-		-- Required.
 		"nvim-lua/plenary.nvim",
+	},
+	config = function()
+		vim.opt.conceallevel = 2
+		-- Add custom keymaps
+		vim.keymap.set("n", "<leader>on", ":ObsidianNew ", { desc = "New Obsidian note", noremap = true })
 
-		-- see below for full list of optional dependencies 👇
-	},
-	opts = {
-		workspaces = {
-			{
-				name = "personal",
-				path = "~/Documents/Obsidian Vault",
-			},
-			{
-				name = "notes",
-				path = "/media/bappa/DATA/obsidian",
-			},
-		},
+		require("obsidian").setup({
+			dir = "/media/bappa/DATA/obsidian",
+			notes_subdir = "notes",
+			new_notes_location = "current_dir",
 
-		-- see below for full list of options 👇
-	},
-	completion = {
-		nvim_cmp = true,
-		min_chars = 2,
-	},
+			-- Customize the note ID generation
+			note_id_func = function(title)
+				-- Keep spaces in the ID
+				return title
+			end,
+
+			-- Customize how note file names are generated
+			note_path_func = function(spec)
+				-- Replace spaces with underscores in the file name
+				local file_name = spec.title:gsub(" ", "_")
+				local path = spec.dir / file_name
+				return path:with_suffix(".md")
+			end,
+
+			completion = {
+				nvim_cmp = true,
+				min_chars = 2,
+				new_notes = true,
+				link_text = true,
+				link_targets = true,
+			},
+		})
+	end,
 }
