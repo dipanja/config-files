@@ -9,7 +9,7 @@ return {
 	config = function()
 		vim.opt.conceallevel = 2
 		-- Add custom keymaps
-		vim.keymap.set("n", "<leader>on", ":ObsidianNew ", { desc = "New Obsidian note", noremap = true })
+		vim.keymap.set("n", "<leader>oo", ":ObsidianTemplate ", { desc = "add template", noremap = true })
 
 		require("obsidian").setup({
 			dir = "/media/bappa/DATA/obsidian",
@@ -25,10 +25,18 @@ return {
 			-- Customize how note file names are generated
 			note_path_func = function(spec)
 				-- Replace spaces with underscores in the file name
-				local file_name = spec.title:gsub(" ", "_")
+				-- local file_name = spec.title:gsub(" ", "_")
+				local file_name = spec.title
 				local path = spec.dir / file_name
 				return path:with_suffix(".md")
 			end,
+
+			-- templates
+			templates = {
+				folder = "templates",
+				date_format = "%d-%m-%Y",
+				time_format = "%H:%M",
+			},
 
 			completion = {
 				nvim_cmp = true,
