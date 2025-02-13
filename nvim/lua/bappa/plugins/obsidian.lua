@@ -9,7 +9,13 @@ return {
 	config = function()
 		vim.opt.conceallevel = 2
 		-- Add custom keymaps
-		vim.keymap.set("n", "<leader>oo", ":ObsidianTemplate ", { desc = "add template", noremap = true })
+
+		vim.keymap.set(
+			"n",
+			"<leader>oo",
+			":ObsidianNewFromTemplate<CR>",
+			{ desc = "create new note from template", noremap = true }
+		)
 
 		require("obsidian").setup({
 			dir = "/media/bappa/DATA/obsidian",
