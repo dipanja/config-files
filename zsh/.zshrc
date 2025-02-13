@@ -83,7 +83,7 @@ alias da="conda deactivate"
 alias lg="lazygit"
 alias dl="yt-dlp"
 # Obsidian
-alias oo="cd /media/bappa/DATA/obsidian"
+alias oo="cd /media/bappa/DATA/obsidian/notes/"
 alias ob="~/applications/Obsidian-1.8.4.AppImage --no-sandbox"
 
 # tmux
