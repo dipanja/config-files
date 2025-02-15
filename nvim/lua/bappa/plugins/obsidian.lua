@@ -37,6 +37,10 @@ return {
 				return path:with_suffix(".md")
 			end,
 
+			follow_url_func = function(url)
+				vim.system({ "xdg-open", url }, { detach = true })
+			end,
+
 			-- templates
 			templates = {
 				folder = "templates",
