@@ -82,18 +82,7 @@ return {
 				},
 			},
 			pickers = {
-				lsp_document_symbols = {
-					show_line = true, -- Show line numbers
-					symbols = { -- Filter which symbols to show
-						"class",
-						"function",
-						"method",
-						"constructor",
-						"interface",
-						"module",
-						"property",
-					},
-				},
+				lsp_document_symbols = {},
 			},
 			extensions = {},
 		})
