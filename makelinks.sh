@@ -15,6 +15,10 @@ echo "Symlink created for nvim folder."
 ln -sfn "$SOURCE_DIR/ranger" "$DEST_DIR/.config/ranger"
 echo "Symlink created for ranger."
 
+# Create symlink for yazi
+ln -sfn "$SOURCE_DIR/yazi" "$DEST_DIR/.config/yazi"
+echo "Symlink created for yazi."
+
 # Create symlink for .zshrc file
 ln -sfn "$SOURCE_DIR/zsh/.zshrc" "$DEST_DIR/.zshrc"
 echo "Symlink created for .zshrc file."
