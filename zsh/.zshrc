@@ -96,6 +96,7 @@ alias tt="tmuxhere"
 alias ls='eza --icons=always'
 # eval "$(zoxide init zsh)"
 alias cd="z"
+alias y="yazi"
 
 set -o vi
 
@@ -155,10 +156,21 @@ export NVM_DIR="$HOME/.nvm"
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 
+# zoxide init for zsh
 eval "$(zoxide init zsh)"
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-export PATH="/home/linuxbrew/.linuxbrew/opt/node@18/bin:$PATH"
+# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# export PATH="/home/linuxbrew/.linuxbrew/opt/node@18/bin:$PATH"
+
+# yazi config from docs.
+# function y() {
+# 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+# 	yazi "$@" --cwd-file="$tmp"
+# 	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+# 		builtin cd -- "$cwd"
+# 	fi
+# 	rm -f -- "$tmp"
+# }
