@@ -166,11 +166,11 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # export PATH="/home/linuxbrew/.linuxbrew/opt/node@18/bin:$PATH"
 
 # yazi config from docs.
-# function y() {
-# 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-# 	yazi "$@" --cwd-file="$tmp"
-# 	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-# 		builtin cd -- "$cwd"
-# 	fi
-# 	rm -f -- "$tmp"
-# }
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
