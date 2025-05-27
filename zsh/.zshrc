@@ -79,7 +79,7 @@ alias r="ranger"
 alias cn="cd ~/.config/nvim"
 alias e="echo $git"
 alias fd="fdfind"
-alias da="conda deactivate"
+# alias da="conda deactivate"
 alias lg="lazygit"
 alias dl="yt-dlp"
 # Obsidian
