@@ -100,7 +100,7 @@ set -o vi
 
 # own functions 
 mkcd () {
-  mkdir -p "$1" && z "$1"
+  mkdir -p "$1" && cd "$1"
 }
 
 # deactivate python environment 
