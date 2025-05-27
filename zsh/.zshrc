@@ -121,6 +121,16 @@ da() {
     
 }
 
+uva() {
+  da > /dev/null
+  if [[ -f .venv/bin/activate ]]; then
+    source .venv/bin/activate
+    echo "venv activated"
+  else 
+    echo "No venv found."
+  fi
+}
+
 # Function to create or attach to tmux session named after current directory
 tmuxhere() {
     # Get the current directory name, strip any leading path
