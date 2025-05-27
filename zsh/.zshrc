@@ -102,7 +102,7 @@ set -o vi
 
 # own functions 
 mkcd () {
-  mkdir -p "$1" && cd "$1"
+  mkdir -p "$1" && z "$1"
 }
 
 # Function to create or attach to tmux session named after current directory
