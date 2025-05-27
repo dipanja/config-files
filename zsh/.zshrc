@@ -174,3 +174,4 @@ function yy() {
 	fi
 	rm -f -- "$tmp"
 }
+eval "$(uv generate-shell-completion zsh)"
