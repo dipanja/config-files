@@ -105,6 +105,22 @@ mkcd () {
   mkdir -p "$1" && z "$1"
 }
 
+# deactivate python environment 
+da() {
+    # Check if in a conda environment and deactivate
+    if [[ -n "$CONDA_DEFAULT_ENV" ]]; then
+        echo "Deactivating conda environment: $CONDA_DEFAULT_ENV"
+        conda deactivate
+    fi
+    
+    # Check if in a virtual environment and deactivate
+    if [[ -n "$VIRTUAL_ENV" ]]; then
+        echo "Deactivating virtual environment: $(basename $VIRTUAL_ENV)"
+        deactivate
+    fi
+    
+}
+
 # Function to create or attach to tmux session named after current directory
 tmuxhere() {
     # Get the current directory name, strip any leading path
