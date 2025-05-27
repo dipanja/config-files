@@ -109,14 +109,14 @@ mkcd () {
 da() {
     # Check if in a conda environment and deactivate
     if [[ -n "$CONDA_DEFAULT_ENV" ]]; then
-        echo "Deactivating conda environment: $CONDA_DEFAULT_ENV"
         conda deactivate
+        echo "Deactivated conda environment: $CONDA_DEFAULT_ENV"
     fi
     
     # Check if in a virtual environment and deactivate
     if [[ -n "$VIRTUAL_ENV" ]]; then
-        echo "Deactivating virtual environment: $(basename $VIRTUAL_ENV)"
         deactivate
+        echo "Deactivated virtual environment"
     fi
     
 }
