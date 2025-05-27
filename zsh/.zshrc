@@ -94,8 +94,6 @@ alias tt="tmuxhere"
 
 # alias for eza and zoxide
 alias ls='eza --icons=always'
-# eval "$(zoxide init zsh)"
-alias cd="z"
 alias y="yazi"
 
 set -o vi
@@ -183,7 +181,7 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 
 # zoxide init for zsh
-eval "$(zoxide init zsh)"
+eval "$(zoxide init zsh --cmd cd)"
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/powerlevel10k/powerlevel10k.zsh-theme
