@@ -4,7 +4,7 @@ vim.cmd([[highlight Normal ctermbg=none ]])
 -- highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function()
-		vim.highlight.on_yank({
+		vim.hl.on_yank({
 			higroup = "IncSearch",
 			timeout = 300,
 		})
@@ -15,6 +15,7 @@ local opt = vim.opt
 
 opt.backup = false -- creates a backup file
 opt.swapfile = false -- turn off swapfile
+opt.undofile = true -- undofile to undo changes after quiting
 opt.fileencoding = "utf-8" -- the encoding written to a file
 opt.clipboard = "unnamedplus" -- use system clipboard
 opt.completeopt = { "menu", "menuone", "noselect" }
@@ -36,6 +37,7 @@ opt.incsearch = true -- search as characters are entered
 opt.hlsearch = false -- highlight matches
 opt.ignorecase = true -- ignore case in searches by default
 opt.smartcase = true -- but make it case sensitive if an uppercase is entered
+opt.inccommand = "split"
 
 -- Scrolling
 opt.scrolloff = 2
