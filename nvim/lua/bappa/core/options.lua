@@ -21,6 +21,9 @@ opt.clipboard = "unnamedplus" -- use system clipboard
 opt.completeopt = { "menu", "menuone", "noselect" }
 opt.mouse = "a" -- allow the mouse to be used in Nvim
 opt.guifont = "monospace:h19" -- the font used in graphical neovim applications
+opt.backspace = { "start", "eol", "indent" }
+opt.isfname:append("@-@")
+opt.updatetime = 50
 
 -- Tab
 opt.tabstop = 2 -- number of visual spaces per TAB
