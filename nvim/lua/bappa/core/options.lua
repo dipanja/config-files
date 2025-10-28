@@ -52,3 +52,6 @@ opt.cursorline = true -- enable coursorline
 -- split window options.
 opt.splitbelow = true -- open new vertical split bottom
 opt.splitright = true -- open new horizontal splits right
+
+opt.foldmethod = "manual"
+opt.foldlevel = 99
