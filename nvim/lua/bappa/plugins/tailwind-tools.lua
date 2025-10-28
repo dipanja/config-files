@@ -11,6 +11,9 @@ return {
 		-- "neovim/nvim-lspconfig", -- optional
 	},
 	opts = {
+		server = {
+			override = false,
+		},
 		document_color = {
 			enabled = true, -- can be toggled by commands
 			kind = "background", -- "inline" | "foreground" | "background"
