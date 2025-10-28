@@ -30,10 +30,7 @@ return {
 	},
 
 	config = function()
-		-- import lspconfig plugin
-		local lspconfig = require("lspconfig")
-
-		-- import cmp-nvim-lsp plugin
+		-- import cmp-nvim-lsp plugin for capabilities
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
 		local keymap = vim.keymap
@@ -105,7 +102,7 @@ return {
 			}, bufnr)
 		end
 
-		-- Setup LSP servers manually (recommended approach for nvim-lspconfig)
+		-- Setup LSP servers using the new vim.lsp.config API
 		local servers = {
 			ts_ls = {},
 			html = {},
@@ -128,14 +125,15 @@ return {
 			},
 		}
 
-		-- Setup each server
+		-- Setup each server using the new API
 		for server, config in pairs(servers) do
 			local server_config = vim.tbl_deep_extend("force", {
 				capabilities = capabilities,
 				on_attach = on_attach,
 			}, config)
 
-			lspconfig[server].setup(server_config)
+			-- Use the new vim.lsp.config API instead of lspconfig[server].setup()
+			vim.lsp.config(server, server_config)
 		end
 	end,
 }
