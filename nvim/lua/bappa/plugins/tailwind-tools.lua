@@ -3,7 +3,7 @@ return {
 	"luckasRanarison/tailwind-tools.nvim",
 	-- name = "tailwind-tools",
 	-- build = ":UpdateRemotePlugins",
-  event = "VeryLazy",
+	event = "VeryLazy",
 
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter",
@@ -18,4 +18,4 @@ return {
 			debounce = 100, -- in milliseconds, only applied in insert mode
 		},
 	}, -- your configuration
-} 
+}
